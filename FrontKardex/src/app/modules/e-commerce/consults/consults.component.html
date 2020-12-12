@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    <div class="row my-3">
+        <div class="col-2 mx-3">
+            <label for="inputReference">Product Reference</label>
+            <input class="form-control" type="number" placeholder="reference" aria-label="Search" id="inputReference"
+                [(ngModel)]="id" name="id">
+        </div>
+        <div class="col-2 my-3 align-self-center">
+            <a title="" class="btn btn-icon btn-light btn-hover-primary btn-sm mx-3" (click)="getProduct()">
+                <span [inlineSVG]="'./assets/media/svg/icons/General/Search.svg'" class="svg-icon svg-icon-lg">
+                </span>
+            </a>
+            <!-- <button class="" color="accent" type="button" (click)="getProduct()">Search</button>         -->
+        </div>
+        <div class="col-5 offset-1">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Product Reference</th>
+                        <th scope="col">Product Name </th>
+                        <th scope="col">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{product.id}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.quantity}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row my-3">
+        <div class="col-2 ml-3 align-self-center">
+            <label for="inputName">Product Name</label>
+            <input class="form-control mr-sm-2" type="text" placeholder="new name" aria-label="Search" id="inputName"
+                [(ngModel)]="name" name="name">
+            <label>{{message}}</label>
+        </div>
+        <div>
+            <br>
+        </div>
+        <!-- <div class="col-1 ml-3 align-self-center">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="text" (click)="updateProduct()">Update</button>
+      </div>   -->
+
+        <div class="mx-3 pr-4 align-self-center">
+            <a title="Edit customer" class="btn btn-icon btn-light btn-hover-primary btn-sm mx-3"
+                (click)="updateProduct()">
+                <span [inlineSVG]="'./assets/media/svg/icons/Communication/Write.svg'" cacheSVG="true"
+                    class="svg-icon svg-icon-md svg-icon-primary">
+                </span>
+            </a>
+            <a title="Delete customer" class="btn btn-icon btn-light btn-hover-danger btn-sm" (click)="deleteProduct()">
+                <span [inlineSVG]="'./assets/media/svg/icons/General/Trash.svg'" cacheSVG="true"
+                    class="svg-icon svg-icon-md svg-icon-danger">
+                </span>
+            </a>
+        </div>
+        <!-- <div class="col-1 pl-0 align-self-center">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="text" (click)="deleteProduct()">Delete</button>
+      </div> -->
+    </div>
+</div>

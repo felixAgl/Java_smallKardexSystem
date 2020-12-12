@@ -2,9 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ECommerceComponent } from './e-commerce.component';
-import { CustomersComponent } from './customers/customers.component';
-import { ProductsComponent } from './products/products.component';
-import { ProductEditComponent } from './products/product-edit/product-edit.component';
+import { HomeComponent } from './home/home.component';
+import { ConsultsComponent } from './consults/consults.component';
+import { StockComponent } from './stock/stock.component';
+import { SaleComponent } from './sale/sale.component';
 
 const routes: Routes = [
   {
@@ -12,24 +13,24 @@ const routes: Routes = [
     component: ECommerceComponent,
     children: [
       {
-        path: 'customers',
-        component: CustomersComponent,
+        path: 'home',
+        component: HomeComponent,
       },
       {
-        path: 'products',
-        component: ProductsComponent,
+        path: 'consults',
+        component: ConsultsComponent,
+      },
+      // {
+      //   path: 'customers',
+      //   component: CustomersComponent,
+      // },
+      {
+        path: 'stock',
+        component: StockComponent,
       },
       {
-        path: 'product/add',
-        component: ProductEditComponent
-      },
-      {
-        path: 'product/edit',
-        component: ProductEditComponent
-      },
-      {
-        path: 'product/edit/:id',
-        component: ProductEditComponent
+        path: 'sale',
+        component: SaleComponent,
       },
       { path: '', redirectTo: 'customers', pathMatch: 'full' },
       { path: '**', redirectTo: 'customers', pathMatch: 'full' },

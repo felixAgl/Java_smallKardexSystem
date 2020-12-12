@@ -1,15 +1,19 @@
-import { BaseModel } from '../../../_metronic/shared/crud-table';
-
-export interface Product extends BaseModel {
-  id: number;
-  model: string;
-  manufacture: string;
-  modelYear: number;
-  mileage: number;
-  description: string;
-  color: string;
-  price: number;
-  condition: number;
-  status: number;
-  VINCode: string;
+export interface IProduct {
+  id?: number;
+  document?: number;
+  name?: string;
+  quantity?: number;
+  cost?: number;
+  total?: number;
+  detail?: string;
+}
+export class Product implements IProduct {
+  constructor(
+    public id?: number,
+    public document?: number,
+    public name?: string,
+    public quantity?: number,
+    public cost?: number,
+    public total?: number,
+    public detail?: string) { }
 }
