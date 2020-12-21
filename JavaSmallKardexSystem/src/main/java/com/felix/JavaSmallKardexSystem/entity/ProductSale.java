@@ -31,6 +31,17 @@ public class ProductSale implements Serializable {
 	@Column
 	private String detail;
 
+	public ProductSale(int id, int refProduct, String name, int quantity, int cost, int total, String detail) {
+		super();
+		this.id = (long) id;
+		this.refProduct = BigDecimal.valueOf(refProduct);
+		this.name = name;
+		this.quantity = BigDecimal.valueOf(quantity);
+		this.cost = BigDecimal.valueOf(cost);
+		this.total = BigDecimal.valueOf(total);
+		this.detail = detail;
+	}
+
 	public Long getId() {
 		return id;
 	}

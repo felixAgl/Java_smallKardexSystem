@@ -32,6 +32,17 @@ public class Stock implements Serializable {
 	@Column
 	private String detail;
 
+	public Stock(int id, int document, String name, int quantity, int cost, int total, String detail) {
+		super();
+		this.id = (long) id;
+		this.document = BigDecimal.valueOf(document);
+		this.name = name;
+		this.quantity = BigDecimal.valueOf(quantity);
+		this.cost = BigDecimal.valueOf(cost);
+		this.total = BigDecimal.valueOf(total);
+		this.detail = detail;
+	}
+
 	public Long getId() {
 		return id;
 	}
