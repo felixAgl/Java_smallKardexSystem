@@ -58,7 +58,7 @@ public class ProductSaleServiceImplTest {
 		} catch (ProductException e) {
 			e.printStackTrace();
 			// Assert
-			assertEquals(ProductError.PRODUCT_NOT_FOUND.getMessage(), e.getMessage());
+			assertEquals(ProductError.STOCK_NOT_FOUND.getMessage(), e.getMessage());
 		}
 		// Assert
 		Mockito.verify(stockRepository).findById(Mockito.anyLong());

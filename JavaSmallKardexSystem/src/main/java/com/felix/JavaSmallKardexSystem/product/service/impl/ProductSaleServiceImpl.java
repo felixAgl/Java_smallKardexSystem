@@ -27,7 +27,7 @@ public class ProductSaleServiceImpl implements ProductSaleService {
 	public void saveSale(ProductSale productSale) throws ProductException {
 		Optional<Stock> product = stockRepository.findById(productSale.getRefProduct().longValue());
 		if (!product.isPresent()) {
-			throw new ProductException(ProductError.PRODUCT_NOT_FOUND.getMessage());
+			throw new ProductException(ProductError.STOCK_NOT_FOUND.getMessage());
 		}
 		if (product.get().getQuantity().longValue() < productSale.getQuantity().longValue()) {
 			throw new ProductException(ProductError.NO_PRODUCTS_IN_STOCK.getMessage());
