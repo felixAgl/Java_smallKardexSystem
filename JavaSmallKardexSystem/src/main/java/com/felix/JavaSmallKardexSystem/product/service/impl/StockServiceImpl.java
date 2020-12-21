@@ -50,10 +50,10 @@ public class StockServiceImpl implements StockService {
 	@Override
 	public void updateProduct(Stock stock, Long id) throws ProductException {
 		Optional<Stock> oProductFindById = stockRepository.findById(id);
-		Optional<Stock> oByName = stockRepository.findByName(stock.getName());
 		if (stock == null || !oProductFindById.isPresent()) {
 			throw new ProductException(ProductError.PRODUCT_NOT_FOUND.getMessage());
 		}
+		Optional<Stock> oByName = stockRepository.findByName(stock.getName());
 		if (oByName.isPresent() && !stock.getName().equalsIgnoreCase(oProductFindById.get().getName())) {
 			throw new ProductException(ProductError.PRODUCT_ALREADY_EXIST.getMessage());
 		}
